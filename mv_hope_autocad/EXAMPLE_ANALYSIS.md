@@ -28,11 +28,9 @@
 | `emerjrncy light`, `light` | Lighting |
 
 ## Fire plan symbols used in MV HOPE
-The fire plans themselves are stored in the DWG as three unplaced group blocks: `A$C6F953480`, `A$C5A922C62` (LETFALLAH I) and `A$C02572AF6` (ABOU KARIM III). Each one holds a complete plan with a LEGEND table.
-
-The MV HOPE file uses the legend of `A$C6F953480`, which has 63 rows covering fire-fighting and life-saving appliances:
-- Each legend symbol is now its own block, named `FP-<description>`, for example `FP-WATER FIRE HYDRANT`, `FP-FIRE BOX HOSE WITH NOZZLES`, `FP-EMERGENCY ESCAPE B.DEVICE` and `FP-LIFE JAKET`. Each block's base point is the centre of the symbol.
-- The whole legend table is the block `FIRE PLAN LEGEND`. It is placed inside the sheet, with the Nb. (quantity) column left blank for the MV HOPE counts.
+They come from the two-column **LEGEND (FIRE FIGHTING APPLIANCES, ACC.A.952(23))** in the example's model space. It sits at about X 3322–3348, Y −6487 to −6515, and a second identical copy is at X 3557. It is drawn small, with text 0.2 high.
+- Each of its 62 rows is now a block named `FP-<description>`, for example `FP-WATER FIRE HYDRANT`, `FP-FIRE ALARM PANEL`, `FP-D.O.F.O.SHUT OFF VALVE`, `FP-TEMPERATURE DETECTOR`, `FP-RESCUE BOAT` and `FP-MEDICAL LOCKER`. The base point is the centre of the symbol, and each block is scaled ×3 so it suits the 1:200 metre sheet. The original-size geometry is kept in matching `FPR-` blocks.
+- The two legend columns are the blocks `FIRE PLAN LEGEND 1` and `FIRE PLAN LEGEND 2`, also at ×3. They are stacked on the right of the sheet, with the quantity column left blank for the MV HOPE counts.
 
 ## Note on reading the file
 The DWG's header section is damaged, so a strict reader rejects it. All of the geometry, layers and blocks still read correctly. If AutoCAD complains, run `RECOVER` and then `AUDIT`.
