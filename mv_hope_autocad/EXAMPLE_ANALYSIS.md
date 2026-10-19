@@ -27,8 +27,12 @@
 | `VENT` | Ventilation |
 | `emerjrncy light`, `light` | Lighting |
 
-## Fire and safety symbol blocks (most used)
-HYDRANT (163), FIRE BOX (114), ISOLATING VALVE (125), PRIMARY ESCAP (233), mean escape (211), SECONDARY ESCAPE, LIFE JAKET (49), FIRE EXTINGUISHER POWDER / CO2, EEBD, SART, EPIRB, RAFT, BELL, GENERAL ALARM BELL, SMOKE, heat detector, DAMPER, FIRE FLAP, CO2 HORN, MAIN / EMERGENCY FIRE PUMP, FIRE STATION, MUSTER STATION, FIRE PLAN LOCATION, and more. 108 of these blocks were rebuilt into `MV_HOPE_FIRE_SAFETY_PLAN_bluemar.dxf`.
+## Fire plan symbols used in MV HOPE
+The fire plans themselves are stored in the DWG as three unplaced group blocks: `A$C6F953480`, `A$C5A922C62` (LETFALLAH I) and `A$C02572AF6` (ABOU KARIM III). Each one holds a complete plan with a LEGEND table.
+
+The MV HOPE file uses the legend of `A$C6F953480`, which has 63 rows covering fire-fighting and life-saving appliances:
+- Each legend symbol is now its own block, named `FP-<description>`, for example `FP-WATER FIRE HYDRANT`, `FP-FIRE BOX HOSE WITH NOZZLES`, `FP-EMERGENCY ESCAPE B.DEVICE` and `FP-LIFE JAKET`. Each block's base point is the centre of the symbol.
+- The whole legend table is the block `FIRE PLAN LEGEND`. It is placed inside the sheet, with the Nb. (quantity) column left blank for the MV HOPE counts.
 
 ## Note on reading the file
 The DWG's header section is damaged, so a strict reader rejects it. All of the geometry, layers and blocks still read correctly. If AutoCAD complains, run `RECOVER` and then `AUDIT`.
